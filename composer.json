@@ -1,0 +1,14 @@
+{
+  "name": "proxiblue/elastic",
+  "description": "Adjustments to how smile elastic search indexes",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "ProxiBlue\\Elastic\\": ""
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Smile_ElasticsuiteCore default analysis configuration.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+ * versions in the future.
+ *
+ * @category  Smile
+ * @package   Smile\ElasticsuiteCore
+ * @author    Aurelien FOUCRET <aurelien.foucret@smile.fr>
+ * @copyright 2019 Smile
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+ -->
+<analysis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:module:Smile_ElasticsuiteCore:etc/elasticsuite_analysis.xsd">
+    <filters>
+        <filter name="word_delimiter" type="word_delimiter" language="default">
+            <generate_word_parts>false</generate_word_parts>
+            <catenate_words>true</catenate_words>
+            <catenate_numbers>true</catenate_numbers>
+            <catenate_all>true</catenate_all>
+            <split_on_case_change>false</split_on_case_change>
+            <split_on_numerics>false</split_on_numerics>
+            <preserve_original>true</preserve_original>
+        </filter>
+        <filter name="reference_word_delimiter" type="word_delimiter" language="default">
+            <generate_word_parts>false</generate_word_parts>
+            <catenate_words>false</catenate_words>
+            <catenate_numbers>false</catenate_numbers>
+            <catenate_all>false</catenate_all>
+            <split_on_case_change>true</split_on_case_change>
+            <split_on_numerics>false</split_on_numerics>
+            <preserve_original>true</preserve_original>
+        </filter>
+    </filters>
+    <analyzers>
+        <analyzer name="whitespace" tokenizer="whitespace" language="default">
+            <filters>
+                <filter ref="ascii_folding" />
+                <filter ref="trim" />
+                <filter ref="word_delimiter" />
+                <filter ref="lowercase" />
+                <filter ref="elision" />
+            </filters>
+            <char_filters>
+                <char_filter ref="html_strip" />
+            </char_filters>
+        </analyzer>
+    </analyzers>
+</analysis>
