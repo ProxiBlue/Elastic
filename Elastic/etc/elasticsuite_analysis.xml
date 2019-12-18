@@ -17,6 +17,11 @@
  -->
 <analysis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:module:Smile_ElasticsuiteCore:etc/elasticsuite_analysis.xsd">
+
+    <char_filters>
+        <char_filter name="html_strip" type="html_strip" language="default"/>
+    </char_filters>
+
     <filters>
         <filter name="word_delimiter" type="word_delimiter" language="default">
             <generate_word_parts>false</generate_word_parts>
@@ -32,17 +37,17 @@
             <catenate_words>false</catenate_words>
             <catenate_numbers>false</catenate_numbers>
             <catenate_all>false</catenate_all>
-            <split_on_case_change>true</split_on_case_change>
+            <split_on_case_change>false</split_on_case_change>
             <split_on_numerics>false</split_on_numerics>
             <preserve_original>true</preserve_original>
         </filter>
     </filters>
+
     <analyzers>
-        <analyzer name="whitespace" tokenizer="whitespace" language="default">
+        <analyzer name="whitespace_custom" tokenizer="standard" language="default">
             <filters>
                 <filter ref="ascii_folding" />
                 <filter ref="trim" />
-                <filter ref="word_delimiter" />
                 <filter ref="lowercase" />
                 <filter ref="elision" />
             </filters>
