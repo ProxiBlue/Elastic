@@ -34,7 +34,7 @@
                 <field name="required_options" type="boolean" />
                 <field name="created_at" type="date" />
                 <field name="updated_at" type="date" />
-                <field name="type_id" type="string" />
+                <field name="type_id" type="text" />
 
                 <!-- Static fields handled by the "prices" datasource -->
                 <field name="price.price" type="double" nestedPath="price"/>
@@ -47,16 +47,16 @@
                 <field name="category.position" type="integer" nestedPath="category"/>
                 <field name="category.is_parent" type="boolean" nestedPath="category"/>
 
-                <field name="sku" type="string">
+                <field name="sku" type="text">
                     <isSearchable>1</isSearchable>
                     <isUsedInSpellcheck>1</isUsedInSpellcheck>
-                    <defaultSearchAnalyzer>whitespace</defaultSearchAnalyzer>
+                    <defaultSearchAnalyzer>whitespace_custom</defaultSearchAnalyzer>
                 </field>
 
                 <field name="description" type="text">
                     <isSearchable>1</isSearchable>
                     <isUsedInSpellcheck>1</isUsedInSpellcheck>
-                    <defaultSearchAnalyzer>whitespace</defaultSearchAnalyzer>
+                    <defaultSearchAnalyzer>whitespace_custom</defaultSearchAnalyzer>
                 </field>
             </mapping>
         </type>
